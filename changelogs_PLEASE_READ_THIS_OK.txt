@@ -5,7 +5,8 @@ I'll be updating what I do on here, and am expecting y'all to do the same.
 Any updates you make to this file, please mention your name so we both know who has done what.
 eg: <date> Aaron: blahblahblahblah
 
-Also, as we start working on the project simultaneously, I'm expecting you guys to use BRANCHES in github, please do look into how we do it if you guys are not sure. Trust me, I'm starting from absolute 0 in this project as well, with git, github and everything in between.
+Also, as we start working on the project simultaneously, I'm expecting you guys to use BRANCHES in github, please do look into how we do it if you guys are not sure.
+Trust me, I'm starting from absolute 0 in this project as well, with git, github and everything in between.
 
 Do look down to the changes I make in the notes below as we go.
 
