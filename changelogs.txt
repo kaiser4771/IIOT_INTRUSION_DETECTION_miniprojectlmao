@@ -1,0 +1,38 @@
+29.10.2026:
+
+Python Virtual environment setup done.
+Instructions so far:
+Install your VM. Recommended specs:
+  Any debian Linux would be amazing, preferably the lightest you can get, I'm using antiX linux
+  8GB RAM
+  8 - 10 vCPUs
+  >~60GBs storage (IMPORTANT BECAUSE OF THE DATASETS)
+
+Once installations done, update linux with the following:
+'''
+sudo apt update
+sudo apt upgrade
+'''
+create a folder where the project files will be stored, and clone the repo to it
+"""
+cd /<path-to-project-folder>/
+git clone https://github.com/kaiser4771/IIOT_INTRUSION_DETECTION_miniprojectlmao.git iiot-ids
+cd iiot-ids
+git config user.name "Their Name"
+git config user.email "their-github-email"
+"""
+
+Next part is creating a python venv so 
+'''
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+'''
+all packages you need to install via pip are included in requirements.txt
+
+
+
+
+
+
