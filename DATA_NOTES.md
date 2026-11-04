@@ -1,7 +1,7 @@
 # Data notes
 
 - Source: Kaggle Edge-IIoTset, folder 'Selected dataset for ML and DL'
-- Hashes recorded on: %f
+- Hashes recorded on: 2026-11-04
 
 1d3ef6c7cc22784a528a117f1158f5cad750273679437e18a39c360ee6b79fd7  data/raw/DNN-EdgeIIoT-dataset.csv
 53101fad091af20bee815860962a5016b802ee45d456a141042f6183094c3c1a  data/raw/ML-EdgeIIoT-dataset.csv
