@@ -1,0 +1,62 @@
+Rows read: 157800   Columns: 63
+
+Kept 25 of 61 feature columns:
+  arp.opcode, arp.hw.size, http.content_length, http.response, tcp.ack, tcp.connection.fin, tcp.connection.rst, tcp.connection.syn, tcp.connection.synack, tcp.flags, tcp.flags.ack, tcp.len, udp.time_delta, dns.qry.name, dns.qry.qu, dns.retransmission, dns.retransmit_request, mqtt.conflag.cleansess, mqtt.conflags, mqtt.hdrflags, mqtt.len, mqtt.msgtype, mqtt.proto_len, mqtt.topic_len, mqtt.ver
+Dropped, by reason:
+  ID-like: icmp.checksum, icmp.seq_le, tcp.ack_raw, tcp.checksum, udp.stream
+  address / time: ip.src_host, ip.dst_host, arp.dst.proto_ipv4, arp.src.proto_ipv4, icmp.transmit_timestamp
+  artifact (MITM-only quirk): frame.time, tcp.seq, tcp.srcport
+  constant: icmp.unused, http.tls_port, dns.qry.type, dns.retransmit_request_in, mqtt.msg_decoded_as, mbtcp.len, mbtcp.trans_id, mbtcp.unit_id
+  ports (added back later as a control): tcp.dstport, udp.port
+  text (numeric-only rule): http.file_data, http.request.uri.query, http.request.method, http.referer, http.request.full_uri, http.request.version, tcp.options, tcp.payload, dns.qry.name.len, mqtt.conack.flags, mqtt.msg, mqtt.protoname, mqtt.topic
+
+Duplicate rows in the ORIGINAL columns: 814
+Rows identical to another row in the columns the model SEES (kept features + label): 124281
+Removed per type:
+Attack_type
+Normal                   20259
+DDoS_ICMP                14089
+DDoS_UDP                 13096
+Uploading                10154
+Password                  9953
+XSS                       9932
+SQL_injection             9726
+DDoS_HTTP                 9423
+Ransomware                6849
+Port_Scanning             5675
+Backdoor                  5675
+DDoS_TCP                  4237
+Vulnerability_scanner     3113
+MITM                      1099
+Fingerprinting            1001
+After de-duplication: 33519 rows remain.
+Feature patterns that still appear with BOTH labels: 18 (36 rows). Normal and attack look identical there; kept, but they cap achievable accuracy.
+Identical feature vectors in both train and test (only possible with conflicting labels): 6
+
+Rows per attack type:
+                         raw  dups_removed  kept  train  test
+Attack_type                                                  
+Backdoor               10195          5675  4520   3188  1332
+DDoS_HTTP              10561          9423  1138    779   359
+DDoS_ICMP              14090         14089     1      0     1
+DDoS_TCP               10247          4237  6010   4253  1757
+DDoS_UDP               14498         13096  1402    997   405
+Fingerprinting          1001          1001     0      0     0
+MITM                    1214          1099   115     78    37
+Normal                 24301         20259  4042   2829  1213
+Password                9989          9953    36     23    13
+Port_Scanning          10071          5675  4396   3072  1324
+Ransomware             10925          6849  4076   2829  1247
+SQL_injection          10311          9726   585    402   183
+Uploading              10269         10154   115     80    35
+Vulnerability_scanner  10076          3113  6963   4859  2104
+XSS                    10052          9932   120     74    46
+
+WARNING: fewer than 2 rows left after de-duplication (cannot be reported per type): DDoS_ICMP, Fingerprinting
+WARNING: fewer than 100 test rows, per-type results unreliable: DDoS_ICMP, Fingerprinting, MITM, Password, Uploading, XSS
+
+Train rows: 23463  Test rows: 10056  (test share 30%, seed 42)
+Attack share  train: 87.9%   test: 87.9%   (= accuracy of always guessing 'attack')
+Normal rows in test: 1213  (false-positive rate resolution is 1 / this number)
+
+Saved to results/: train_split_numeric.npy, test_split_numeric.npy, kept_columns_numeric.json, split_numeric.json, split_summary_numeric.txt

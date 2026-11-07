@@ -1,0 +1,15 @@
+{
+  "version": 3,
+  "set": "numeric",
+  "stratified_by": "Attack_label",
+  "dedupe_key": "kept features + Attack_label",
+  "seed": 42,
+  "test_size": 0.3,
+  "rows_read": 157800,
+  "dups_removed": 124281,
+  "train": 23463,
+  "test": 10056,
+  "attack_share_train": 0.8794,
+  "attack_share_test": 0.8794,
+  "n_kept_columns": 25
+}
