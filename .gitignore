@@ -1,4 +1,5 @@
-./venv/
-main_venv
+.venv/
+main_venv/
 data/raw/
-__pycache__
+__pycache__/
+.ipynb_checkpoints/

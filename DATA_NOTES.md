@@ -48,7 +48,7 @@ Relationship between the two files:
 
 - **[observed]** VM: antiX Linux on VMware, 8 GB RAM, 60 GB disk. The OS reports Debian GNU/Linux 13.7 ("trixie"); Python 3.13.5; virtual environment `.venv`.
 - Analysis so far was run in a JupyterLab notebook, `audit.ipynb`. Notebooks are gitignored, so it is not in the repo.
-- `src/01_audit.py` runs the same checks and saves `results/audit.txt`. [pending] Commit it so the numbers can be reproduced.
+- `src/scripts/01_audit.py` runs the same checks and saves `results/audit.txt`. [pending] Commit it so the numbers can be reproduced.
 
 ## 3. What the ML file contains
 
@@ -255,7 +255,7 @@ Rules that stay fixed: decide before looking at model results; every reported nu
 ## 11. Next steps
 
 1. Decide the open items in section 9, at least 1 to 4.
-2. Run `src/02_split.py` (version 2), read its output, and only then push the split files (`results/split_*.npy`, `results/kept_columns.json`).
+2. Run `src/scripts/02_split_numeric.py~ (version 2), read its output, and only then push the split files (`results/split_*.npy`, `results/kept_columns.json`).
 3. Step 5 controls: shuffled labels should score near the majority baseline, and dropped columns added back should reveal any shortcut.
 4. Hand over the split to teammates B and C.
 
@@ -267,7 +267,7 @@ Rules that stay fixed: decide before looking at model results; every reported nu
 
 ## 12. Split results: numeric-only feature set (Option A)
 
-Source: notebook `split.ipynb` (Cells 3 to 9), rerun by `src/02_split.py` (version 3). Run date: [fill in].
+Source: notebook `src/notebooks/02_split_numeric.py` (Cells 3 to 9), rerun by `src/scripts/02_split_numeric.py~ (version 3). Run date: [fill in].
 Tags as above: **[observed]**, **[inferred]**, **[decision]**, **[pending]**.
 
 This section supersedes: the baseline in section 4 (0.846 applies to the raw file; the de-duplicated split below is 0.879), the stratification in section 9 row 4 (now by label), and section 8.4 (Fingerprinting now has no rows left).
